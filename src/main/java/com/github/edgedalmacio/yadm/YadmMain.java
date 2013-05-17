@@ -28,6 +28,7 @@ public class YadmMain {
 	public static void main(String[] args) {
 		if (args.length < 2) {
 			System.out.println("Usage: <sourceDirectory> <targetDirectory> [dryRun]");
+			System.exit(0);
 		}
 		String sourceDirectory = args[0];
 		String targetDirectory = args[1];
