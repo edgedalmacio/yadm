@@ -98,8 +98,7 @@ public class YadmFileVisitor extends SimpleFileVisitor<Path> {
 
 		if (!dryRun) {
 			try {
-				Files.copy(sourcePath, targetPath, options);
-				Files.delete(sourcePath);
+				Files.move(sourcePath, targetPath, options);
 			} catch (Exception e) {
 				if (logger.isWarnEnabled()) {
 					logger.warn(e.getMessage());
