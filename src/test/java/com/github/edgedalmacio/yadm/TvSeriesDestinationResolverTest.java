@@ -46,6 +46,14 @@ public class TvSeriesDestinationResolverTest {
 		
 		assertEquals("The Walking Dead/Season 3/The.Walking.Dead.S03E14.HDTV.x264.mp4", actual);
 	}
-	
+
+	@Test
+	public void parseWithNoExtension() {
+		String input = "classpath-include";
+		
+		String actual = parser.resolveDestination("/", input);
+		assertNull(actual);
+	}
+
 }
 

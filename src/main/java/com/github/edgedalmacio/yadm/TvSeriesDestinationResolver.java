@@ -69,8 +69,10 @@ public class TvSeriesDestinationResolver implements DestinationResolver {
 	private String cleanFileName(String fileName) {
 		int indexOfHyphen = fileName.indexOf('-');
 		if (indexOfHyphen > -1) {
-			return fileName.substring(0, indexOfHyphen)
-					+ fileName.substring(fileName.lastIndexOf('.'));
+			String firstPart = fileName.substring(0, indexOfHyphen);
+			int lastIndexOfDot = fileName.lastIndexOf('.');
+			String secondPart = lastIndexOfDot != -1 ? fileName.substring(lastIndexOfDot) : "";
+			return firstPart + secondPart;
 		}
 		return fileName;
 	}
