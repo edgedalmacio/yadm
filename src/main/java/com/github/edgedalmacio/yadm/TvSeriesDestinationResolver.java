@@ -27,7 +27,7 @@ import java.util.regex.Pattern;
  */
 public class TvSeriesDestinationResolver implements DestinationResolver {
 
-	private final Pattern tvPattern = Pattern.compile("(\\S+)\\.S(\\d{2})E\\d{2}\\..*");
+	private final Pattern tvPattern = Pattern.compile("(\\S+)\\.S?+(\\d{1,2})(E|x)\\d{2}\\..*");
 	
 	private final int nameIndex = 1;
 	private final int seasonIndex = 2;

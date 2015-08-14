@@ -38,13 +38,23 @@ public class TvSeriesDestinationResolverTest {
 	}
 	
 	@Test
-	public void parse() {
+	public void parseS03E14() {
 		String input = "The.Walking.Dead.S03E14.HDTV.x264-ASAP.mp4";
 		
 		String actual = parser.resolveDestination("/", input);
 		assertNotNull(actual);
 		
 		assertEquals("The Walking Dead/Season 3/The.Walking.Dead.S03E14.HDTV.x264.mp4", actual);
+	}
+
+	@Test
+	public void parse2x01() {
+		String input = "Black.Mirror.2x01.Be.Right.Back.HDTV.x264-FoV.mp4";
+		
+		String actual = parser.resolveDestination("/", input);
+		assertNotNull(actual);
+		
+		assertEquals("Black Mirror/Season 2/Black.Mirror.2x01.Be.Right.Back.HDTV.x264.mp4", actual);
 	}
 
 	@Test
