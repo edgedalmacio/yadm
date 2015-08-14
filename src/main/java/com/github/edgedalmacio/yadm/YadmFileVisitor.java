@@ -91,6 +91,13 @@ public class YadmFileVisitor extends SimpleFileVisitor<Path> {
 				.toString();
 		
 		Path targetPath = Paths.get(targetUri);
+		
+		if (sourcePath.equals(targetPath)) {
+			if (logger.isDebugEnabled()) {
+				logger.debug("Skipping {} ...", fileName);
+			}
+			return FileVisitResult.CONTINUE;
+		}
 
 		if (logger.isInfoEnabled()) {
 			logger.info("Moving {} to {} ...", sourcePath, targetPath);
