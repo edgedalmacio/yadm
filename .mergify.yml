@@ -1,9 +1,7 @@
+queue_rules: []
+
 pull_request_rules:
   - name: automatic merge for Dependabot pull requests
-    conditions:
-      - author~=^dependabot(|-preview)\[bot\]$
-      - status-success=build
+    conditions: []
     actions:
       queue:
-        method: rebase
-        name: default
